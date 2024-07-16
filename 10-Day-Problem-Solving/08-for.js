@@ -1,19 +1,17 @@
+/*
+ * Complete the vowelsAndConsonants function.
+ * Print your output using 'console.log()'.
+ */
 function vowelsAndConsonants(s) {
-  const vowels = ["a", "e", "i", "o", "u"];
-
-  console.log("Vowels: ");
-  for (const letter of s) {
-    if (vowels.indexOf(letter) > -1) {
-      console.log(letter);
-    }
+  for (let i=0; i<s.length; i++){
+      if(s[i]=='a' || s[i]=='e' || s[i]=='i' || s[i]=='o' || s[i]=='u'){
+          console.log(s[i]);
+      }
   }
-
-  console.log("Consonants: ");
-  for (const letter of s) {
-    if (vowels.indexOf(letter) < 0) {
-      console.log(letter);
-    }
+  
+  for (let i=0; i<s.length; i++){
+      if(s[i]!='a' && s[i]!='e' && s[i]!='i' && s[i]!='o' && s[i]!='u'){
+          console.log(s[i]);
+      }
   }
 }
-
-vowelsAndConsonants("Hello World");

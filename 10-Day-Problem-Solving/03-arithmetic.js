@@ -1,10 +1,12 @@
-export function area(length, width) {
-  return length * width;
+function getArea(length, width) {
+  let area = length * width;
+  // Write your code here
+  
+  return area;
 }
-
-export function perimeter(length, width) {
-  return 2 * (length + width);
+function getPerimeter(length, width) {
+  let perimeter = 2 * (length + width);
+  // Write your code here
+  
+  return perimeter;
 }
-
-console.log(area(5, 6));
-console.log(perimeter(5, 6));

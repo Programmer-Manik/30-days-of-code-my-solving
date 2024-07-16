@@ -1,50 +1,64 @@
-function letter(s) {
-  let result;
+'use strict';
 
-  switch (s) {
-    case "a":
-    case "e":
-    case "o":
-    case "i":
-    case "u":
-      result = "A";
-      break;
+process.stdin.resume();
+process.stdin.setEncoding('utf-8');
 
-    case "b":
-    case "c":
-    case "d":
-    case "f":
-    case "g":
-      result = "B";
-      break;
+let inputString = '';
+let currentLine = 0;
 
-    case "h":
-    case "j":
-    case "k":
-    case "l":
-    case "m":
-      result = "C";
-      break;
+process.stdin.on('data', inputStdin => {
+    inputString += inputStdin;
+});
 
-    case "z":
-    case "n":
-    case "p":
-    case "q":
-    case "r":
-    case "s":
-    case "t":
-    case "v":
-    case "w":
-    case "x":
-    case "y":
-      result = "D";
-  }
+process.stdin.on('end', _ => {
+    inputString = inputString.trim().split('\n').map(string => {
+        return string.trim();
+    });
+    
+    main();    
+});
 
-  return result;
+function readLine() {
+    return inputString[currentLine++];
 }
 
-console.log(letter("a"));
+function getLetter(s) {
+    let letter;
+    // Write your code here
+    switch(s.charAt(0)){
+        case "a" :
+        case "e" :
+        case "i" :
+        case "o" :
+        case "u" :
+        letter="A";
+        break
+        case "b" :
+        case "c" :
+        case "d" :
+        case "f" :
+        case "g" :
+        letter="B";
+        break
+        case "h" :
+        case "j" :
+        case "k" :
+        case "l" :
+        case "m" :
+        letter="C";
+        break
+        
+        default:
+        letter="D";
+        
+    }
+    
+    return letter;
+}
 
-console.log(letter("h"));
 
-console.log(letter("n"));
+function main() {
+    const s = readLine();
+    
+    console.log(getLetter(s));
+}
