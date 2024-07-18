@@ -1,22 +1,13 @@
-class Rectangle {
-  constructor(width, height) {
-    this.width = width;
-    this.height = height;
-  }
-
-  area() {
-    return this.width * this.height;
-  }
+Rectangle.prototype.area=function(){
+  return this.w*this.h;
 }
 
-class Square extends Rectangle {
-  constructor(s) {
-    super(s, s);
+/*
+* Create a Square class that inherits from Rectangle and implement its class constructor
+*/
+class Square extends Rectangle{
+  constructor(side){
+      super(side,side);
+      this.side=side;
   }
 }
-
-const rec = new Rectangle(3, 4);
-const sqr = new Square(3);
-
-console.log(rec.area());
-console.log(sqr.area());

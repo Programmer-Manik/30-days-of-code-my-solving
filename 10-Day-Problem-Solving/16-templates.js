@@ -1,18 +1,17 @@
-function sides(_literals, ...expressions) {
-  const perimeter = expressions[1];
-
-  const s1 =
-    (perimeter + Math.sqrt(perimeter * perimeter - 16 * expressions[0])) / 4;
-  const s2 =
-    (perimeter - Math.sqrt(perimeter * perimeter - 16 * expressions[0])) / 4;
-
-  return [s1, s2].sort((a, b) => a - b);
+function sides(literals, ...expressions) {
+  let a = expressions[0];  // area
+  let p = expressions[1];  // perimeter
+  
+  // Calculate the side lengths using the quadratic formula
+  let s1 = (p + Math.sqrt((p * p) - (16 * a))) / 4;
+  let s2 = (p - Math.sqrt((p * p) - (16 * a))) / 4;
+  
+  // Create an array of the side lengths
+  let array = [s1, s2];
+  
+  // Sort the array in ascending order
+  array.sort((x, y) => x - y);
+  
+  return array;
 }
 
-const [s1, s2] = [1, 4];
-
-const [x, y] = sides`The area is: ${s1 * s2}.\nThe perimeter is: ${
-  2 * (s1 + s2)
-}.`;
-
-console.log(x, y);

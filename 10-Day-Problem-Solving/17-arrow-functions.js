@@ -1,6 +1,11 @@
 /** Even elements are doubled and all odd elements are tripled. */
-function modifyArray(numbers) {
-  return numbers.map((num) => (num % 2 === 0 ? 2 * num : 3 * num));
+function modifyArray(nums) {
+  for (let i = 0; i < nums.length; i++) {
+      if (nums[i] % 2 === 0) {
+          nums[i] = nums[i] * 2;
+      } else {
+          nums[i] = nums[i] * 3;
+      }
+  }
+  return nums;
 }
-
-console.log(modifyArray([1, 2, 3, 4, 5]));
